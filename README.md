@@ -1,2 +1,2 @@
-# AGIW_First_Project
+# AGIW First Project
 First project for AGIW course held at Roma Tre University
