@@ -16,8 +16,9 @@ def hidden(child):
 # Computes shingle vector for given html tree
 def compute_shingle_vector(html_src, shingle_window_size):
     
-    bodyAsString = str(BeautifulSoup(html_src,'html.parser').body)
-    html = BeautifulSoup(bodyAsString, 'html.parser')
+    html = BeautifulSoup(html_src,'html.parser').body
+    #bodyAsString = str(BeautifulSoup(html_src,'html.parser').body)
+    #html = BeautifulSoup(bodyAsString, 'html.parser')
     shingles_set = compute_shingles_set(html, shingle_window_size)
     #TODO: sistemare il parametro html nelle chiamate successive
     shingles_hashed_vectors = []
