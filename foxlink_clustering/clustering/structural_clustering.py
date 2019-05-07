@@ -58,6 +58,7 @@ def structural_clustering(collection, threshold=20):
             # 6/8 and 7/8 vectors need to be computed, increment counts while computing them (only one pass)
             covering_vectors[shingle_vector] = compute_covering_vectors_and_increment_counts(shingle_vector, hash_table)
 
+
     #   *SECOND PASS*
     # sort 8/8 vectors by count
     sorted_eight_eight = sorted(eight_eight_vectors_counts.items(), key=operator.itemgetter(1), reverse=True)
@@ -85,7 +86,7 @@ def structural_clustering(collection, threshold=20):
                 not_assigned_pages.append((shingle_vector, urls))
                 for u in urls:
                     not_clustered += 1
-                    del sample[u[0]]
+                    del sample[u]
 
     # build algorithm result with a short iteration
     result = []
