@@ -11,7 +11,7 @@ def structural_clustering(listOfHtmls, bandwithValue = 0.1):
 	vectorizer = features.TagFrequency()
 	last_vec = None
 
-	for doc in listOfHtmls:
+	for _, doc in listOfHtmls.iteritems():
 		feature_vec = vectorizer(doc)
 		matrix.append(feature_vec)
 		last_vec = feature_vec
