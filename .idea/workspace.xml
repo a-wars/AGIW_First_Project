@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b61bdf83-af60-4ae8-a1e3-ff336ee81d34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/astarwars_clustering/clustering/clusteringtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/astarwars_clustering/clustering/clusteringtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astarwars_clustering/clustering/features.py" beforeDir="false" afterPath="$PROJECT_DIR$/astarwars_clustering/clustering/features.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astarwars_clustering/clustering/structural_clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/astarwars_clustering/clustering/structural_clustering.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/astarwars_clustering/clustering/structural_clustering.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="439">
+              <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -26,23 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/astarwars_clustering/clustering/features.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/astarwars_clustering/clustering/clusteringtest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="225">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -59,8 +46,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/astarwars_clustering/clustering/features.py" />
-        <option value="$PROJECT_DIR$/astarwars_clustering/clustering/clusteringtest.py" />
         <option value="$PROJECT_DIR$/astarwars_clustering/clustering/structural_clustering.py" />
+        <option value="$PROJECT_DIR$/astarwars_clustering/clustering/clusteringtest.py" />
       </list>
     </option>
   </component>
@@ -112,6 +99,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -202,22 +190,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/astarwars_clustering/clustering/clusteringtest.py">
+    <entry file="file://$PROJECT_DIR$/astarwars_clustering/clustering/structural_clustering.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="439">
+          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/astarwars_clustering/clustering/structural_clustering.py">
+    <entry file="file://$PROJECT_DIR$/astarwars_clustering/clustering/clusteringtest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="225">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
