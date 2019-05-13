@@ -3,8 +3,8 @@ import numpy as np
 from astarwars_clustering.utils import utility
 from astarwars_clustering.clustering import structural_clustering
 
-FILEPATH = '/home/vincenzo/PycharmProjects/AGIW_First_Project/dataset/bookdepository.csv'
-df = pd.read_csv(FILEPATH,nrows=1000)
+FILEPATH = '/home/vincenzo/PycharmProjects/AGIW_First_Project/datasets/blackwells.csv'
+df = pd.read_csv(FILEPATH,nrows=2000)
 print("No. of rows and columns")
 print("-----------------------")
 print(df.shape)
@@ -15,6 +15,7 @@ labels=clusters.labels_
 print (np.unique(labels))
 
 nclusters=len(clusters.cluster_centers_)
+df['predicted_labels']=labels
 selectedelements=utility.count_occurrences(labels, 0)
 truepositive=0
 allpositives=len(df[df['label']=='product'])
