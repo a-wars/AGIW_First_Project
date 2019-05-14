@@ -6,10 +6,9 @@ from astarwars_clustering.utils import utility
 #predictedlabel rappresenta l'etichetta del clustering su cui vogliamo calcolare precision e recall
 def calculate_precision_and_recall(df, clustering, selectedlabel, predictedlabel):
 
-	labels=clustering.labels_
+	labels = clustering.labels_
 	df['predicted_labels'] = labels
-	selectedelements=utility.count_occurrences(labels,predictedlabel)
-	print('Predicted products:{}',selectedelements)
+	selectedelements = utility.count_occurrences(labels, predictedlabel)
 
 	truepositive = 0
 	allpositives = len(df[df['label'] == selectedlabel])
