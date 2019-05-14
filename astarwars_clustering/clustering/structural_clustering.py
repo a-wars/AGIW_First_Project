@@ -1,6 +1,6 @@
 from astarwars_clustering.clustering import features
 from astarwars_clustering.utils import utility
-from sklearn.cluster import MeanShift, estimate_bandwidth
+from sklearn.cluster import MeanShift, estimate_bandwidth, DBSCAN
 import numpy as np
 import pandas as pd
 import time as time
@@ -10,13 +10,23 @@ import time as time
 # It takes as input a Pandas Series containing html source code and a hyperparameter for mean shift clustering algorithm called bandwith
 
 
-def structural_clustering(bandwidth, featurematrix):
+def meanshiftclustering(bandwidth, featurematrix):
     start = time.time()
     clustering = MeanShift(bandwidth=bandwidth).fit(featurematrix)
     end = time.time()
     hours, rem = divmod(end - start, 3600)
     minutes, seconds = divmod(rem, 60)
-    print("Elapsed time to calculate clustering:{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds))
+    print("Elapsed time to calculate MeanShift clustering:{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds))
+    return clustering
+
+
+def dbscanclustering(featurematrix):
+    start = time.time()
+    clustering =DBSCAN(min_samples=20, eps=0.1).fit(featurematrix)
+    end = time.time()
+    hours, rem = divmod(end - start, 3600)
+    minutes, seconds = divmod(rem, 60)
+    print("Elapsed time to calculate DBSCAN clustering:{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds))
     return clustering
 
 
