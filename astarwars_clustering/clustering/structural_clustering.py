@@ -1,4 +1,4 @@
-from astarwars_clustering.clustering import features
+from astarwars_clustering.features import tag_count
 from astarwars_clustering.utils import utility
 from sklearn.cluster import MeanShift, estimate_bandwidth, DBSCAN
 import numpy as np
@@ -34,7 +34,7 @@ def createFeatureMatrix(listOfHtmls):
     start = time.time()
 
     matrix = []
-    vectorizer = features.TagFrequency()
+    vectorizer = tag_count.TagFrequency()
     last_vec = None
     for _, doc in listOfHtmls.iteritems():
         feature_vec = vectorizer(doc)
