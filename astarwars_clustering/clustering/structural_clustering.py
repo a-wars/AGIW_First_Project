@@ -16,7 +16,7 @@ def meanshiftclustering(featurematrix,bandwidth=None):
     if bandwidth is not None:
     	clustering = MeanShift(bandwidth=bandwidth).fit(featurematrix)
     else:
-    	clustering = MeanShift().featurematrix(featurematrix)
+    	clustering = MeanShift().fit(featurematrix)
     end = time.time()
     hours, rem = divmod(end - start, 3600)
     minutes, seconds = divmod(rem, 60)
