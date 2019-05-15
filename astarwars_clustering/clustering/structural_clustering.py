@@ -1,4 +1,4 @@
-from astarwars_clustering.features import tag_count
+from astarwars_clustering.features import tag_count,bitset
 from astarwars_clustering.utils import utility
 from sklearn.cluster import MeanShift, estimate_bandwidth, DBSCAN
 import numpy as np
@@ -12,7 +12,7 @@ import time as time
 
 def meanshiftclustering(bandwidth, featurematrix):
     start = time.time()
-    clustering = MeanShift(bandwidth=bandwidth).fit(featurematrix)
+    clustering = MeanShift(bandwidth=bandwidth,cluster_all=False).fit(featurematrix)
     end = time.time()
     hours, rem = divmod(end - start, 3600)
     minutes, seconds = divmod(rem, 60)
@@ -20,14 +20,30 @@ def meanshiftclustering(bandwidth, featurematrix):
     return clustering
 
 
-def dbscanclustering(featurematrix):
+def dbscanclustering(featurematrix,eps):
     start = time.time()
-    clustering =DBSCAN(min_samples=20, eps=0.1).fit(featurematrix)
+    clustering =DBSCAN(min_samples=20, eps=eps).fit(featurematrix)
     end = time.time()
     hours, rem = divmod(end - start, 3600)
     minutes, seconds = divmod(rem, 60)
     print("Elapsed time to calculate DBSCAN clustering:{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds))
     return clustering
+
+
+def createBitsetMatrix(listOfHtmls):
+    start = time.time()
+
+    matrix = []
+
+    for _, doc in listOfHtmls.iteritems():
+        feature_vec = bitset.to_bit_array(data=doc,wl=64,bit_len=2048)
+        matrix.append(feature_vec)
+
+    end = time.time()
+    hours, rem = divmod(end - start, 3600)
+    minutes, seconds = divmod(rem, 60)
+    print("Elapsed time to calculate features:{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds))
+    return matrix
 
 
 def createFeatureMatrix(listOfHtmls):
@@ -38,7 +54,7 @@ def createFeatureMatrix(listOfHtmls):
     last_vec = None
     for _, doc in listOfHtmls.iteritems():
         feature_vec = vectorizer(doc)
-        matrix.append(feature_vec)
+        matrix.append(feature_vec.tolist())
         last_vec = feature_vec
     utility.pad_matrix_elem(matrix, last_vec)
 
@@ -49,13 +65,5 @@ def createFeatureMatrix(listOfHtmls):
     return matrix
 
 
-def calculatePrecision(truepositive, selectedelements):
-    return truepositive / selectedelements
 
-
-def calculateRecall(truepositive,allpositive):
-	return truepositive/allpositive
-
-def calculateF1Score(recall,precision):
-	return 2*((recall*precision)/(recall+precision))
 

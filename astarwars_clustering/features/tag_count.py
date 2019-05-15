@@ -7,7 +7,8 @@ def get_class(tag):
 
 
 def tag_to_token(tag):
-    return (tag.name,get_class(tag))
+    return tag.name,get_class(tag)
+
 
 class TagFrequency(object):
     def __init__(self):
@@ -16,7 +17,7 @@ class TagFrequency(object):
 
     def __call__(self, page):
         to_index = []
-        soup=BeautifulSoup(page,'lxml')
+        soup = BeautifulSoup(page, 'lxml')
         for fragment in soup.findAll():
             token = tag_to_token(fragment)
             index = self.dictionary.get(token)
