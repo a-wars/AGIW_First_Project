@@ -1,3 +1,5 @@
+from scipy.linalg.matfuncs import eps
+
 from astarwars_clustering.features import tag_count,bitset
 from astarwars_clustering.utils import utility
 from sklearn.cluster import MeanShift, estimate_bandwidth, DBSCAN
@@ -28,7 +30,7 @@ def dbscanclustering(featurematrix,epsValue=None,min_samplesValue=None):
     start = time.time()
     clustering=None
     if epsValue is not None:
-    	clustering = DBSCAN(min_samples = min_samplesValue, eps = epsValue).fit(featurematrix)
+    	clustering = DBSCAN(eps=epsValue, min_samples=min_samplesValue).fit(featurematrix)
     else:
     	clustering = DBSCAN().fit(featurematrix)
     end = time.time()
