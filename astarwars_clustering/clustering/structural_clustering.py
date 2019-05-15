@@ -10,7 +10,7 @@ import time as time
 # It takes as input a Pandas Series containing html source code and a hyperparameter for mean shift clustering algorithm called bandwith
 
 
-def meanshiftclustering(bandwidth=None, featurematrix):
+def meanshiftclustering(featurematrix,bandwidth=None):
     start = time.time()
     clustering=None
     if bandwidth is not None:
