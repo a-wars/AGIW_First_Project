@@ -10,19 +10,27 @@ import time as time
 # It takes as input a Pandas Series containing html source code and a hyperparameter for mean shift clustering algorithm called bandwith
 
 
-def meanshiftclustering(bandwidth, featurematrix):
+def meanshiftclustering(bandwidth=None, featurematrix):
     start = time.time()
-    clustering = MeanShift(bandwidth=bandwidth,cluster_all=False).fit(featurematrix)
+    clustering=None
+    if bandwidth is not None:
+    	clustering = MeanShift(bandwidth=bandwidth).fit(featurematrix)
+    else:
+    	clustering = MeanShift().featurematrix(featurematrix)
     end = time.time()
     hours, rem = divmod(end - start, 3600)
     minutes, seconds = divmod(rem, 60)
     print("Elapsed time to calculate MeanShift clustering:{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds))
     return clustering
 
-
-def dbscanclustering(featurematrix,eps):
+#if eps is specified also min_samples will be not null for convention
+def dbscanclustering(featurematrix,epsValue=None,min_samplesValue=None):
     start = time.time()
-    clustering =DBSCAN(min_samples=20, eps=eps).fit(featurematrix)
+    clustering=None
+    if epsValue is not None:
+    	clustering = DBSCAN(min_samples = min_samplesValue, eps = epsValue).fit(featurematrix)
+    else:
+    	clustering = DBSCAN().fit(featurematrix)
     end = time.time()
     hours, rem = divmod(end - start, 3600)
     minutes, seconds = divmod(rem, 60)
